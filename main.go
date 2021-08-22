@@ -36,7 +36,7 @@ func isBoardValid(guess rune, row, col int) bool { //Create variable type rune, 
 	return true
 }
 
-//Is goint look for next dot, that means there is no number there
+//Is going look for next dot, that means there is no number there
 func findNextEmpty() (int, int) {
 	for i := 0; i < 9; i++ {
 		for j := 0; j < 9; j++ {
@@ -76,6 +76,7 @@ func messageError() {
 }
 
 func main() {
+	//Holds the arguments to the program.
 	args := os.Args[1:]
 	//If the arguments are not 9, error
 	if len(args) != 9 {
@@ -92,7 +93,7 @@ func main() {
 		for j := 0; j < 9; j++ {
 			//If a number
 			if args[i][j] > '0' && args[i][j] <= '9' {
-				//if the number is valid assing it
+				//if the number is valid asccess it
 				if isBoardValid(rune(args[i][j]), i, j) == true {
 					sudo[i][j] = rune(args[i][j])
 				} else {
